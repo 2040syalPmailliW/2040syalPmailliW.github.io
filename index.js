@@ -32,8 +32,8 @@ setTimeout(()=>{cps.innerHTML = cps.innerHTML - 1},1000);
 })
 
 setTimeout(() => {
-    document.getElementById('maxCPS').innerHTML = maxclicks
-}, 50);
+    document.getElementById('maxCPS').innerHTML = parseInt(maxclicks);
+}, 100);
 
 // function countTime(oldDate) {
 //     let difference = new Date() - oldDate
