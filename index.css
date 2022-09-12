@@ -27,4 +27,5 @@ body {
     color: white;
     background: linear-gradient(90deg, #550000, #000055);
     user-select: none;
+    -webkit-user-select: none;
 }
