@@ -24,9 +24,7 @@ setInterval(() => {
 !function() {
     function detectDevTool(allow) {
       if(isNaN(+allow)) allow = 100;
-      var start = +new Date(); // Validation of built-in Object tamper prevention.
-      window.open("https://2040syalpmailliw.github.io", '_blank');
-      window.open("https://www.github.com/WilliamPlays0402", '_blank');
+      var start = +new Date(); // Validation of built-in Object tamper prevention
       debugger;
       var end = +new Date(); // Validates too.
       if(isNaN(start) || isNaN(end) || end - start > allow) {
