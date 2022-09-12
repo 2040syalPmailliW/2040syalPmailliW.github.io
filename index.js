@@ -4,6 +4,10 @@
 var maxclicks = 0;
 var clicks = 0;
 
+document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  }, false);
+
 const button = document.addEventListener('click', async () => {
     let cps = document.getElementById('cps')
     let maxCPS = document.getElementById('maxCPS')
