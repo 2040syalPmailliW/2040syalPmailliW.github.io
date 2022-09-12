@@ -12,28 +12,32 @@ const button = document.addEventListener('click', async () => {
     if (!txt) {
     cps.innerHTML = 1
     maxCPS.innerHTML = 1
+    clicks = parseInt(cps.innerHTML)
     if (maxval < parseInt(cps.innerHTML)) {
         maxCPS.innerHTML = parseInt(cps.innerHTML)
         maxclicks = parseInt(cps.innerHTML)
     }
+    clicks = parseInt(cps.innerHTML)
     } else {
         cps.innerHTML = parseInt(cps.innerHTML)+1
         if (maxval < parseInt(cps.innerHTML)) {
             maxCPS.innerHTML = parseInt(cps.innerHTML)
             maxclicks = parseInt(cps.innerHTML)
         }
+        clicks = parseInt(cps.innerHTML)
     }
 // if (maxval < parseInt(cps.innerHTML)) {
 //     maxCPS.innerHTML = parseInt(cps.innerHTML)
 // }
-setTimeout(()=>{cps.innerHTML = cps.innerHTML - 1},1000);
+setTimeout(()=>{cps.innerHTML = cps.innerHTML - 1; clicks = parseInt(cps.innerHTML);},1000);
     // lastTimes.push(Math.round(cps(countTime(lastTime))))
     // lastTime = new Date()
 })
 
-setTimeout(() => {
+setInterval(() => {
     document.getElementById('maxCPS').innerHTML = parseInt(maxclicks);
-}, 100);
+    // document.getElementById('cps').innerHTML = parseInt(clicks);
+}, 50);
 
 // function countTime(oldDate) {
 //     let difference = new Date() - oldDate
