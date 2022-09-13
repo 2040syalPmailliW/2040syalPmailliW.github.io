@@ -13,7 +13,7 @@ const button = document.addEventListener('click', async () => {
     let maxCPS = document.getElementById('maxCPS')
     let txt = cps.innerHTML
     let maxval = parseInt(maxCPS.innerHTML)
-    clicks + 0.5;
+    clicks = clicks + 0.5;
     if (maxclicks < clicks) maxclicks = clicks;
     setTimeout(() => {
         clicks = clicks - 0.5;
@@ -21,8 +21,8 @@ const button = document.addEventListener('click', async () => {
 })
 
 setInterval(() => {
-    document.getElementById('maxCPS').innerHTML = parseInt(maxclicks);
-    document.getElementById('cps').innerHTML = parseInt(clicks);
+    document.getElementById('maxCPS').innerHTML = maxclicks;
+    document.getElementById('cps').innerHTML = clicks;
 }, 50);
 
 !function() {
@@ -84,4 +84,3 @@ setInterval(() => {
 //     // return averageAnswer;
 //     return times.length;
 // }
-
