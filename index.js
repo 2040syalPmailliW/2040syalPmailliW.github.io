@@ -13,11 +13,11 @@ const button = document.addEventListener('click', async () => {
     let maxCPS = document.getElementById('maxCPS')
     let txt = cps.innerHTML
     let maxval = parseInt(maxCPS.innerHTML)
-    clicks++;
+    clicks + 0.5;
     if (maxclicks < clicks) maxclicks = clicks;
     setTimeout(() => {
-        clicks = clicks - 1;
-    },1000);
+        clicks = clicks - 0.5;
+    },2000);
 })
 
 setInterval(() => {
