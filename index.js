@@ -32,7 +32,7 @@ setInterval(() => {
       debugger;
       var end = +new Date(); // Validates too.
       if(isNaN(start) || isNaN(end) || end - start > allow) {
-        // input your code here when devtools detected.
+        window.close()
       }
     }
     if(window.attachEvent) {
