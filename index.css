@@ -12,6 +12,15 @@ button {
     transition: all 0.3s ease-in-out;
 }
 
+.booster {
+    opacity: 0%;
+    background: linear-gradient(90deg, #ff00aa, #aa00ff);
+    color: white;
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: opacity 0.5s linear;
+}
+
 h1 {
     font-size: large;
     font-family: 'Courier New', Courier, monospace;
