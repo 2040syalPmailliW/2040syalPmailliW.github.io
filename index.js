@@ -8,21 +8,38 @@ document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
   }, false);
 
+var clicksPerClick = 1;
+var boooster = false;
+
+document.addEventListener('keydown', async e => {
+  if (e.key = 'l' && boooster == false) {
+    clicksPerClick = 1.5;
+    boooster = true;
+    document.getElementById('booster').style.opacity = '100%'
+    setTimeout(() => {
+      clicksPerClick = 1;
+      boooster = false;
+      document.getElementById('booster').style.opacity = '0%'
+    }, 5000);
+  }
+});
+
 const button = document.addEventListener('click', async () => {
     let cps = document.getElementById('cps')
     let maxCPS = document.getElementById('maxCPS')
     let txt = cps.innerHTML
-    let maxval = parseInt(maxCPS.innerHTML)
-    clicks = clicks + 1;
+    let maxval = parseFloat(maxCPS.innerHTML)
+    let currentCPC = clicksPerClick
+    clicks = clicks + currentCPC;
     if (maxclicks < clicks) maxclicks = clicks;
     setTimeout(() => {
-        clicks = clicks - 1;
+        clicks = clicks - currentCPC;
     },1000);
 })
 
 setInterval(() => {
-    document.getElementById('maxCPS').innerHTML = maxclicks;
-    document.getElementById('cps').innerHTML = clicks;
+    document.getElementById('maxCPS').innerHTML = Math.round(maxclicks);
+    document.getElementById('cps').innerHTML = Math.round(clicks);
 }, 50);
 
 !function() {
