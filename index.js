@@ -49,7 +49,7 @@ setInterval(() => {
       debugger;
       var end = +new Date(); // Validates too.
       if(isNaN(start) || isNaN(end) || end - start > allow) {
-        window.close()
+          console.log("stop")
       }
     }
     if(window.attachEvent) {
