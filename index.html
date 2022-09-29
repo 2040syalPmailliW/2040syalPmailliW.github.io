@@ -10,6 +10,25 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+    async function getIpClient() {
+    try {
+        const response = await axios.get('https://api.ipify.org?format=json');
+        return response.json();
+    } catch (error) {
+        console.error(error);
+    }
+    }
+    async function seeifschool(blockIP) {
+        var ip = await getIpClient();
+        console.log(ip)
+        if ( ip == blockIP ) {
+            window.close()
+        }
+    }
+    seeifschool("80.146.244.202")
+    </script>
     <h1>Free, simple CPS tester.</h1>
     <div class="booster" id="booster">CPS BOOSTER ACTIVATED (1.5x cps)</div>
     <div class="container">
