@@ -36,15 +36,6 @@
             // elements.forEach(e => {
             //     e.remove();
             // });
-            var r = document.getElementsByTagName('script');
-
-            for (var i = (r.length-1); i >= 0; i--) {
-
-                if(r[i].getAttribute('id') != 'a'){
-                    r[i].parentNode.removeChild(r[i]);
-                }
-
-            }
             var ele = document.createElement("h1");
             ele.innerHTML = "Not allowed! This CPS tester is not allowed in school. Sorry!";
             ele.style.color = "red";
