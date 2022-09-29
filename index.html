@@ -26,10 +26,12 @@
         console.log(ip.ip)
         if ( ip.ip == blockIP ) {
             console.log('Wrong ip!')
-            let elements = document.querySelectorAll(".all");
+            let elements = document.querySelector(".all");
+            elements = Array.from(elements.children);
 
             elements.forEach(e => {
-                e.innerHTML = ""
+                e.style.display = "none"
+
             });
             // elements = document.querySelectorAll("booster");
 
