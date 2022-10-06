@@ -29,8 +29,6 @@
         if (count == 4) {
           console.log("Allowed!")
           letIn = true;
-        } else {
-        document.body.style.background = 'red';
         }
     }, 500);
     async function getIpClient() {
@@ -47,6 +45,7 @@
         console.log(ip.ip)
         if ( ip.ip == blockIP ) {
             console.log('Wrong ip!')
+            setTimeout(() => {if (!letIn) { document.body.style.background = '#a00'; }}, 500);
             setTimeout(() => {
               if (!letIn) {
                 let elements = document.querySelector(".all");
@@ -62,7 +61,7 @@
                 //     e.remove();
                 // });
               }
-            }, 1000);
+            }, 750);
             
             var ele = document.createElement("h1");
             ele.innerHTML = "Not allowed! This CPS tester is not allowed in school. Sorry!";
