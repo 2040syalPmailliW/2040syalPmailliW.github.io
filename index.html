@@ -10,8 +10,27 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
-    <script defer>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+  <script defer>
+    var letIn = false;
+    var map = new Map(); // You could also use an array
+    onkeydown = onkeyup = function(e){
+        e = e || event; // to deal with IE
+        map.set(e.keyCode, e.type == 'keydown');
+        console.log()
+    }
+    setTimeout(async () => {
+        let count = 0;
+        map.forEach(e => {
+            if (e) {
+                count++
+            }
+        });
+        if (count == 4) {
+          console.log("Allowed!")
+          letIn = true;
+        }
+    }, 500);
     async function getIpClient() {
     try {
         const response = await fetch('https://api.ipify.org?format=json')
@@ -26,18 +45,23 @@
         console.log(ip.ip)
         if ( ip.ip == blockIP ) {
             console.log('Wrong ip!')
-            let elements = document.querySelector(".all");
-            elements = Array.from(elements.children);
+            setTimeout(() => {
+              if (!letIn) {
+                let elements = document.querySelector(".all");
+                elements = Array.from(elements.children);
 
-            elements.forEach(e => {
-                e.style.display = "none"
+                elements.forEach(e => {
+                    e.style.display = "none"
 
-            });
-            // elements = document.querySelectorAll("booster");
+                });
+                // elements = document.querySelectorAll("booster");
 
-            // elements.forEach(e => {
-            //     e.remove();
-            // });
+                // elements.forEach(e => {
+                //     e.remove();
+                // });
+              }
+            }, 1000);
+            
             var ele = document.createElement("h1");
             ele.innerHTML = "Not allowed! This CPS tester is not allowed in school. Sorry!";
             ele.style.color = "red";
