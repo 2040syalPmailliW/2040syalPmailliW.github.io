@@ -12,7 +12,7 @@ var clicksPerClick = 1;
 var boooster = false;
 
 document.addEventListener('keydown', async e => {
-  if (e.key = 'l' && boooster == false) {
+  if (e.key === 'l' && boooster == false) {
     clicksPerClick = 1.5;
     boooster = true;
     document.getElementById('booster').style.opacity = '100%'
